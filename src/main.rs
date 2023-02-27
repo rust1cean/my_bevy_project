@@ -1,19 +1,20 @@
 use bevy::prelude::*;
-use map::Map;
-use player::Player;
-use window::Window;
+use food::FoodPlugin;
+use game::GamePlugin;
+use general::GeneralPlugin;
+use player::PlayerPlugin;
 
 mod cfg;
 mod food;
-mod map;
+mod game;
+mod general;
 mod player;
-mod window;
 
 fn main() {
     App::new()
-        .add_plugin(Window)
-        .add_plugin(Player)
-        .add_plugin(Map)
-        // .add_plugin(Food)
+        .add_plugin(GeneralPlugin)
+        .add_plugin(PlayerPlugin)
+        .add_plugin(FoodPlugin)
+        .add_plugin(GamePlugin)
         .run();
 }

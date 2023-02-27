@@ -1,9 +1,9 @@
 use crate::cfg::{CLEAR_COLOR, TITLE, WINDOW_HEIGHT, WINDOW_WIDTH};
 use bevy::prelude::*;
 
-pub struct Window;
+pub struct GeneralPlugin;
 
-impl Plugin for Window {
+impl Plugin for GeneralPlugin {
     fn build(&self, app: &mut App) {
         self.clear_bg(app);
         self.create_window(app);
@@ -12,7 +12,7 @@ impl Plugin for Window {
     }
 }
 
-impl Window {
+impl GeneralPlugin {
     pub fn clear_bg(&self, app: &mut App) {
         app.insert_resource(ClearColor(CLEAR_COLOR));
     }
